@@ -1,16 +1,35 @@
-// Declare 'countdown'
-var countdown = ;
+// Declaring variables for elements
+var timerEl = document.querySelector('#timerEl');
+var timeLeft = document.querySelector("#timeLeft");
+
+var start = document.querySelector("#start");
+var startButton = document.querySelector("#startButton");
+
+var questions = document.querySelector("#questions");
+var question = document.querySelector("#question");
+var answerA = document.querySelector("#answerA");
+var answerB = document.querySelector("#answerB");
+var answerC = document.querySelector("#answerC");
+var answerD = document.querySelector("#answerD");
+
+
+
+var countdown = (0);
 
 // HTML Template
-var template = `
+var questionTemplate = `
     <h2>${currentQuestion.question}</h2>
+
     <button data-answer="${currentQuestion.answers[0]}">${currentQuestion.answers[0]}</button>
+
     <button data-answer="${currentQuestion.answers[1]}">${currentQuestion.answers[0]}</button>
+
     <button data-answer="${currentQuestion.answers[2]}">${currentQuestion.answers[0]}</button>
+
     <button data-answer="${currentQuestion.answers[3]}">${currentQuestion.answers[0]}</button>
     `
 
-    document.getElementById("questions").innerHTML = template;
+    document.getElementById("questions").innerHTML = questionTemplate;
 
     console.log();
 
@@ -18,19 +37,60 @@ var template = `
 
 // Declare 'questions'
 var questionPosition = 0;
+
 var questions = [
     {
         // question
-        question: "What is the coding question"
+        question: "What is the coding question",
         // answers
-        answers: ["Answer A", "Answer B", "Answer C", "Answer D"]
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
         // correct answer
         correct: "Answer A"
     },
     {
-        // question
-        // answers
-        //correct answer
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
+    },
+    {
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
+    },
+    {
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
+    },
+    {
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
+    },
+    {
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
+    },
+    {
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
+    },
+    {
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
+    },
+    {
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
+    },
+    {
+        question: "What is the coding question",
+        answers: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        correct: "Answer A"
     },
 ];
 
@@ -39,11 +99,13 @@ var timerInterval
 
 var currentQuestion = questions[questionPosition];
 
-// Declare the timerEl
-var timerEl = document.querySelector('#timer');
-
 // Function 'startGame'
+function startGame(){
+    questionPosition = 0;
+    timerEl = 90;
+    timerInterval.textContent = timerEl;
 
+}
     // Hide the start screen
 
     // Set the questions position to 0
@@ -101,3 +163,15 @@ function displayCurrentQuestion() {
 function recordHighScore() {
 
 }
+
+var questionContainer = document.querySelector('#question');
+
+        questionContainer.addEventListener("click", function(event) {
+            
+            var clickElement = event.target;
+
+            if( !clickElement.matches('button') ) return;
+
+            var answer = clickElement.dataset.answer
+
+        });

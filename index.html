@@ -20,6 +20,7 @@
     <h1>Code Quiz</h1>
 
     <p>Try to answer all the questions before the timer runs out. Time will be subtracted with incorrect answers.</p>
+    
     <a href="">Start Quiz</a>
 
     </div>
@@ -27,20 +28,6 @@
     <div id="questions"></div>
 
     <div id="highscoreform"></div>
-
-    <script>
-        var questionContainer = document.querySelector('#question');
-
-        questionContainer.addEventListener("click", function(event) {
-            
-            var clickElement = event.target;
-
-            if( !clickElement.matches('button') ) return;
-
-            var answer = clickElement.dataset.answer
-
-        });
-    </script>
     
  <script src="/JS/game.js"></script>   
 </body>
